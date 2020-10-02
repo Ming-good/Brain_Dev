@@ -21,7 +21,6 @@
 	    </repository>
 	</repositories>	
 	<dependencies>
-	
 		<dependency>
 		    <groupId>com.oracle</groupId>
 		    <artifactId>ojdbc6</artifactId>
