@@ -2,38 +2,45 @@
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-<!-- 2.context설정을 annotation방식으로 하겠다 -->
+	
+<!-- 	스프링 MVC 연동 방법 -->
+	
+<!-- ContextConfiguration으로 Application Context를 만들겠다.-->
 	<context-param>
 		<param-name>contextClass</param-name>
 		<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
 	</context-param>
-<!-- 3.설정파일 위치 -->
+<!-- 설정파일 위치 -->
 	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>com.ming.brain.ContextConfiguration</param-value>
 	</context-param>
 
-<!-- 1.spring의 라이프 사이클이 돌 때마다 리스너 동작 -->
+<!-- 3.디스패처 서블릿에 Application Context를 만들 떄 ContextLoaderListener로 만들어준 Application Context를 부모로 사용. -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
 	<!-- Processes application requests -->
+<!-- 2.HomeController Bean은 디스패처 서블릿에서 만든 Apllication Context를 만들어주는 WebConfig 설정파일대로  실행-->
 	<servlet>
-		<servlet-name>appServlet</servlet-name>
-		<servlet-class>com.ming.brain.HomeController</servlet-class>
-<!-- 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> -->
-<!-- 		<init-param> -->
-<!-- 			<param-name>contextConfigLocation</param-name> -->
-<!-- 			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value> -->
-<!-- 		</init-param> -->
-<!-- 		<load-on-startup>1</load-on-startup> -->
+		<servlet-name>apps</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextClass</param-name>
+			<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+		</init-param>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>com.ming.brain.WebConfig</param-value>
+		</init-param>
 	</servlet>
-		
+	
+<!-- 	1.app뒤의 모든 url패턴은 디스패치 서블릿으로 향하게됨 -->
 	<servlet-mapping>
-		<servlet-name>appServlet</servlet-name>
-		<url-pattern>/events</url-pattern>
+		<servlet-name>apps</servlet-name>
+		<url-pattern>/app/*</url-pattern>
 	</servlet-mapping>
 
 </web-app>

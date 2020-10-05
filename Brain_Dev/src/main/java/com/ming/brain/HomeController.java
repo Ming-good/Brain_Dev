@@ -1,29 +1,29 @@
 package com.ming.brain;
 
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.ApplicationContext;
-import org.springframework.web.context.WebApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Handles requests for the application home page.
  */
-public class HomeController extends HttpServlet {
+@RestController
+public class HomeController{
  
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
+	@Autowired
+	HellowService service;
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	public void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        ApplicationContext context = (ApplicationContext) getServletContext().getAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE);
-        HellowService service = context.getBean(HellowService.class);
-        String name = service.getName();
-        System.out.println(name);
+	
+	@GetMapping("/events")
+	public String home(Model model) {
+        return "Hellow" + service.getName();
 	}
 	
 }
