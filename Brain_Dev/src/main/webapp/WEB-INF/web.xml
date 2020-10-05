@@ -2,6 +2,9 @@
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+<!-- 스프링 프레임워크 IOC컨테이너 연동 시키는 원리	 -->
+	
 <!-- 2.context설정을 annotation방식으로 하겠다 -->
 	<context-param>
 		<param-name>contextClass</param-name>
