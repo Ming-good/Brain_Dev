@@ -27,11 +27,13 @@
         <property name="configLocation" value="classpath:/mybatis-config.xml"></property>
         <property name="mapperLocations">
         	<list>
-        		<value>classpath:mappers/testMapper.xml</value>
+        		<value>classpath:mappers/*.xml</value>
         	</list>
         </property>
     </bean>
     
-
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.ming.brain.mapperInterface"/>
+	</bean>
 
 </beans>
