@@ -1,0 +1,277 @@
+@charset "utf-8";
+
+.wrap {
+	position:relative;
+	width:100%
+}
+
+.head {
+	width:100%;
+	display:block;
+}
+.light_gray {
+    background-color: #fafafa;
+    border-bottom: #dfdfdf 1px solid;	
+}
+
+.w_size {
+	overflow: hidden;
+    width: 1180px;
+    margin: 0 auto;
+}
+
+.btn_join {
+	float: right;
+	padding-left: 5px;
+}
+
+.btn_join a {
+	color: #6d6d6d;
+    padding-left: 13px;
+    line-height: 130%;
+    display: block;
+    color: #6d6d6d;
+    font-size: 11px;
+    padding: 10px;
+    text-decoration: none;
+    line-height: 130%;
+    font-weight: bold;
+}
+
+
+body {
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:100%;
+	padding-bottom:60px;
+}
+
+a {
+	color: #383838;
+    text-decoration: none;	
+}
+
+.head1 {
+	width: 1080px;
+    height: 110px;
+    margin: auto;
+}
+
+.head1 .logo {
+	float: left;
+    width: 250px;
+    padding-top: 44px;
+    z-index: 1;
+}
+
+
+.head2 {
+	width: 100%;
+    height: 55px;
+    background: #fff;
+    position: relative;
+    z-index: 19000;
+    border-bottom: 1px solid #eee;	
+}
+
+.head2 .gnb_wrap {
+    width: 1180px;
+    margin: auto;
+    position: relative;
+    z-index: 19000;	
+}
+
+.head2 .gnb_wrap .gnb_list2 {
+    width: 1180px;
+	overflow: hidden;
+}
+
+ul, ol {
+	margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.head2 .gnb_wrap .gnb_list2 li:first-child {
+    padding: 0 18px;
+}
+
+.head2 .gnb_wrap .gnb_list2 li {
+    float: left;
+    position: relative;
+    padding: 0 20px;
+}
+
+.head2 .gnb_wrap .gnb_list2 li a {
+    position: relative;
+    display: inline-block;
+    line-height: 55px;
+}
+
+.head2 .gnb_wrap .gnb_list2 li a span {
+    display: block;
+    padding: 0 25px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;	
+}
+
+.head2 .gnb2_wrap {
+	width: 100%;
+    position: absolute;
+    left: 0;
+    top: 55px;
+    background: #fff;
+    text-align: center;
+    -webkit-box-shadow: 0 7px 10px 0 rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 7px 10px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 7px 10px 0 rgba(0,0,0,0.15);	
+}
+
+.head2 .gnb2_wrap .gnb2_list_wrap {
+    display: inline-block;
+    width: 1180px;
+    padding: 15px 0 3px;
+}
+.head2 .gnb2_wrap .gnb2_list_wrap .gnb2_group {
+    display: inline-block;
+    float: left;
+    word-break: break-all;
+}
+
+img {
+	border: 0px;
+    display: block;	
+}
+
+.head2 .gnb2_wrap li a {
+    display: inline-block;
+    font-size: 13px;
+    color: #868686;
+}
+
+.gnb2_group.group2 {
+    width: 130px;
+}
+
+.head2 .gnb2_group.group2 ul li {
+    display: block;
+    float: none;
+    margin-bottom: 5px;	
+}
+
+.head2 .gnb2_group.group2 ul li a span:hover {
+    color:#333333;
+}
+
+.main_login_pop {
+	position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 100005;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.main_login_pop .login_pop {
+    display: inline-block;
+    width: 340px;
+    padding: 35px 50px;
+    background: #fff;
+}
+
+.login_pop h1 {
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.login_pop h1 img {
+    display: inline-block;
+}
+
+.label_box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.label_box .input_login_label {
+    font-size: 17px;
+    color: #979797;
+}
+
+.input_login_label {
+    color: #656565;
+    top: 10px;
+    left: 15px;
+    position: absolute;
+}
+
+.label_box .input_login {
+    width: 100%;
+    font-size: 17px;
+    background: #F8F8F8;
+}
+
+input[type=text] {
+    outline-style: none;
+    border-radius: 0;
+}
+
+.input_login {
+    border: 1px solid #E6E6E6;
+    font-size: 13px;
+    font-family: 'Nanum Gothic',ng;
+    color: #656565;
+    width: 320px;
+    height: 40px;
+    padding-left: 15px;
+    border-radius: 2px;
+}
+
+.login_pop .btn_login {
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+    margin: 15px 6px 15px;
+    line-height: 60px;
+    background: #984EB1;
+    border-radius: 2px;
+    font-size: 17px;
+    color: #fff;
+    text-align: center;
+}
+
+.login_pop .main_login_pop_close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../img/btn_close9.png") 50% 50% no-repeat;
+    text-indent: -9999px;
+}
+
+
+@media screen and (max-width: 1200px) { 
+	.lazy {
+		width:1180px;
+	}
+	
+	.light_gray {
+		width:1180px;
+	}
+	
+	#mark {
+		width:1180px;
+	}
+	
+	body {
+		width:1180px;
+	}
+}
+

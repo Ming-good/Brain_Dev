@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+.container_main {
+	background: #F8F8F8;
+	padding-bottom:35px;
+}
+
+.main_section {
+    width: 1080px;
+    padding: 10px 0 0;
+    margin: 0 auto;
+}
+
+.data_wrap {
+    padding-bottom: 60px;
+}
+
+
+.main_section .tit_box h3 {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 23px;
+    letter-spacing: -0.45px;
+}
+.data_wrap .con_box .go_box:first-child {
+    float: left;
+    margin-right: 48px;
+}
+.data_wrap .con_box .go_box {
+    display: inline-block;
+    width: 516px;
+    height: 192px;
+}
+
+
+
+.data_wrap .con_box .go_box a {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    padding: 54px 0 0 258px;
+    text-align: center;
+}
+
+p {
+    line-height: 18px;
+}
+
+.data_wrap .con_box .go_box p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.data_wrap .con_box .go_box strong {
+    position: relative;
+    font-weight: bold;
+    font-size: 21px;
+    color: #45444B;
+}
+
+.data_wrap .con_box .go_box strong:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    display: inline-block;
+    width: 74px;
+    height: 11px;
+    margin-left: -37px;
+    background: url("../img/ico_link_arrow.png") 50% 50% no-repeat;
+}
+
+.data_wrap .con_box .go_box:last-child a {
+    background: #fff url(../img/list-2389219.png) 0 74% no-repeat;
+}
+
+.data_wrap .con_box .go_box:first-child a {
+    background: #fff url(../img/survey-2316468.png) 0 5% no-repeat;
+}
+
+
+@media screen and (max-width: 1200px) { 
+	.container_main { 
+		width:1180px;
+	} 
+}

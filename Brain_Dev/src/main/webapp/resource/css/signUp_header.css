@@ -1,0 +1,281 @@
+@charset "utf-8";
+
+.wrap {
+    min-width: 100%;
+    text-align: center;
+}
+
+.head {
+    max-width: 1180px;
+    height: 160px;
+    margin: auto;
+    z-index: 2;
+}
+
+.wrap .head {
+    position: relative;
+    text-align: left;
+}
+
+.head h1 {
+    position: relative;
+    max-width: 1180px;
+    height: 150px;
+}
+
+body, h1 {
+	font-family: '돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;
+	font-family: NanumSquare,NanumGothic, san-serif;
+    font-size: 14px;
+}
+
+.light_gray {
+    background-color: #fafafa;
+    border-bottom: #dfdfdf 1px solid;	
+}
+
+.w_size {
+	overflow: hidden;
+    width: 1180px;
+    margin: 0 auto;
+}
+
+.btn_join {
+	float: right;
+	padding-left: 5px;
+}
+
+.btn_join a {
+	color: #6d6d6d;
+    padding-left: 13px;
+    line-height: 130%;
+    display: block;
+    color: #6d6d6d;
+    font-size: 11px;
+    padding: 10px;
+    text-decoration: none;
+    line-height: 130%;
+    font-weight: bold;
+}
+
+
+body {
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:100%;
+	padding-bottom:60px;
+}
+
+a {
+	color: #383838;
+    text-decoration: none;	
+}
+
+.head1 {
+	width: 1180px;
+    height: 160px;
+    margin: auto;
+}
+
+.head1 .logo {
+	float: left;
+    width: 500px;
+    padding-top: 44px;
+    z-index: 1;
+}
+.head1 em {
+    position: absolute;
+    right: 0;
+    bottom: -8px;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.head1 em strong {
+    color: #76c045;
+}
+
+.container {
+    max-width: 1180px;
+    margin: auto;
+    z-index: 3;
+    padding: 60px 0 100px 0;
+}
+
+.container table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    border-top: 1px solid #dcdcdc;
+}
+
+.container table tbody th {
+    width: 175px;
+    text-align: left;
+    border-bottom: 1px solid #dcdcdc;
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 31px;
+    vertical-align: middle;
+    background: #fafafa;	
+}
+
+.container table tbody th .point {
+    font-style: normal;
+    color: #9e0000;
+    font-size: 13px;
+    padding-left: 4px;	
+}
+
+.container table tbody td {
+	text-align: left;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 20px 0 20px 31px;
+    font-size: 15px;
+    font-weight: bold;	
+}
+
+.inputTypeA {
+    border: 1px solid #e2e2e2;
+    background: #fff;
+    padding: 0 8px;
+    height: 35px;
+    color: #494949;
+    font-size: 16px;
+    line-height: 35px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 38%;
+}
+
+input, textarea{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-border-radius: 0;
+}
+
+input, select, button {
+	vertical-align: middle;	
+    font-family: NanumSquare,고딕, san-serif;	
+}
+
+.btnM {
+    margin-left: 10px;
+    height: 37px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 37px;
+    padding: 0 20px;
+}
+
+.btnL {
+    width: 210px;
+    height: 43px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 43px;
+}
+.bbsTable table tbody td a {
+    vertical-align: middle;
+}
+
+a.btnM, a.btnL{
+    color: #fff;
+}
+
+
+.colorD {
+    background: #76c043;
+}
+
+.colorC {
+    background: #a1a1a1;
+}
+
+a:hover {
+    color: #4f4f4f;
+    text-decoration: none;
+}
+
+span.subTxt {
+    display: inline-block;
+    margin-left: 17px;
+}
+
+caption {
+    display: none;
+}
+
+span.subTxt {
+    display: inline-block;
+    margin-left: 17px;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 22px;
+}
+
+.subBox {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.subBox span {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 22px;
+}
+
+ul.bbsInput {
+    margin-right: 20px;
+    display: inline-block;
+    padding-left: 0;
+    margin-top : 0px;
+    margin-bottom : 0px;
+}
+
+ul.bbsInput li {
+    float: left;
+    padding-right: 10px;
+    padding-top: 10px;
+    height: 22px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #4f4f4f;
+    text-decoration: none;
+}
+
+.btnBox {
+	padding-top: 30px !important;
+    text-align: center;
+}
+
+h3.lineTop {
+    height: 38px;
+    padding-left: 31px;
+    font-size: 22px;
+    text-align: left;
+}
+
+@media screen and (max-width: 1180px) { 
+	
+	.light_gray {
+		width:1180px;
+	}
+	
+	body {
+		width:1180px;
+	}
+}
