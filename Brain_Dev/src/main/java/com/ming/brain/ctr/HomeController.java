@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
  
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	@GetMapping("/events")
 	public String home(Model model) {
 		model.addAttribute("name", "이민규");
+		logger.debug("로그테스트");
 		return "/main/home";
 	}
 	
