@@ -11,11 +11,11 @@
 	</appender>
 
     <appender name="fileLogger" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="file" value="C://springLogger//spring.Log"/>
+<!--         <param name="file" value="C://springLogger//spring.Log"/> -->
+		<param name="file" value="/usr/local/tomcat/webapps/brain/Log/Spring.Log"/>
         <param name="Append" value="true"/>
         <param name="dataPattern" value=".yyyy-MM-dd"/>
         <param name="encoding" value="UTF-8" />
-        <param name="DatePattern" value="'.'yyyy-MM-dd_HH:mm" />
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}] %-5p: %F:%L - %m%n" />
         </layout>
