@@ -21,7 +21,7 @@ public class HomeController {
 	@ExceptionHandler(Exception.class)
 	public void commonException(Exception e) {
 		e.printStackTrace();
-		logger.debug("Error : " + e.getMessage());
+		logger.debug("Error : ", e);
 	}
 	
 	//내가 해야할것 (환경 구축)
@@ -40,7 +40,6 @@ public class HomeController {
 		
 		model.addAttribute("name", "이민규");
 		System.out.println(test.selectTest());
-		
 		return "/main/home";
 	}
 	
