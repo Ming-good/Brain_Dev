@@ -1,5 +1,7 @@
 package com.ming.brain.rootConfig;
 
+import javax.sql.DataSource;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -11,8 +13,8 @@ import net.sf.log4jdbc.tools.LoggingType;
 @Configuration
 public class DatabaseConfig {
 	
-	@Bean(destroyMethod="close")
-	public Log4jdbcProxyDataSource dataSource() {
+	@Bean
+	public DataSource dataSource() {
 		DriverManagerDataSource datasource = new DriverManagerDataSource();
 		datasource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
 		datasource.setUrl("jdbc:oracle:thin:@172.105.197.109:1521:XE");

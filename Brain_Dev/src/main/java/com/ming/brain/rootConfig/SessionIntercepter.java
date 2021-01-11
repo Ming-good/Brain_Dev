@@ -22,10 +22,7 @@ public class SessionIntercepter implements HandlerInterceptor {
 //		} else {
 //			return true;
 //		}
-		
-		System.out.println("**************preHandler1");
-		return false;
-		
+		return true;
 	}
 
 	@Override

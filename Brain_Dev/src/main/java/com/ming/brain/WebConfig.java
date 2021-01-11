@@ -24,8 +24,6 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.ming.brain.rootConfig.SessionIntercepter;
-
 //기본 Filter제외(Controller, Service, Repository 등등)하고 Controller 어노테이션만 스캔함.
 
 @Configuration
@@ -60,10 +58,6 @@ public class WebConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		System.out.println("인터셉터 실행안됨???????????????????");
-		registry.addInterceptor(new SessionIntercepter());
-		System.out.println("인터셉터 실행안됨??");
-		
 	}
 
 	@Override
