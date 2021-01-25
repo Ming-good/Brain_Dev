@@ -2,27 +2,32 @@ package com.ming.brain.rootConfig;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Component;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ming.brain.vo.UserVO;
+
+@Component
 public class SessionIntercepter implements HandlerInterceptor {
 	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-//		HttpSession session = request.getSession();
-//		UserVO userSession = (UserVO) session.getAttribute("loginUser");
-//		
-//		System.out.println("\n\n\n\n\n\n\n技记\n\n\n\n\n\n\n\n\n\n\n");
-//		response.sendRedirect("/brainDev/signUp");
-//		if(ObjectUtils.isEmpty(userSession)){
-//			
-//			return false;
-//		} else {
-//			return true;
-//		}
-		return true;
+		HttpSession session = request.getSession();
+		UserVO userSession = (UserVO) session.getAttribute("loginUser");
+		
+		System.out.println("\n\n\n\n\n\n\n技记\n\n\n\n\n\n\n\n\n\n\n");
+		
+		if(ObjectUtils.isEmpty(userSession)){
+			response.sendRedirect("/brainDev/home");
+			return false;
+		} else {
+			return true;
+		}
 	}
 
 	@Override

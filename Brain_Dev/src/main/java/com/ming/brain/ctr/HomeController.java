@@ -1,14 +1,19 @@
 package com.ming.brain.ctr;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.ming.brain.mapperInterface.TestMapper;
+import com.ming.brain.vo.UserVO;
 
 /**
  * Handles requests for the application home page.
@@ -36,15 +41,18 @@ public class HomeController {
 	TestMapper test;
 	
 	@GetMapping("/brainDev/home")
-	public String home(Model model) throws Exception {
+	public String home(Model model, HttpSession session) throws Exception {
+		UserVO user = new UserVO();
+		user.setUserNM("¿ÃπŒ±‘");
 		
-		model.addAttribute("name", "¿ÃπŒ±‘");
+		model.addAttribute("user", user);
+		
 		System.out.println(test.selectTest());
 		return "/main/home";
 	}
 	
-	@GetMapping("/brainDev/signUp")
-	public String signUp(Model model) throws Exception {
+	@GetMapping("/brainDev/signUp.do")
+	public String signUp(Model model, HttpSession session) throws Exception {
 		
 		return "/user/SignUp";		
 	}

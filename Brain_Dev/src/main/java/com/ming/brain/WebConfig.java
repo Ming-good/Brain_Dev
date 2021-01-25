@@ -2,6 +2,7 @@ package com.ming.brain;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
@@ -23,6 +24,8 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import com.ming.brain.rootConfig.SessionIntercepter;
 
 //기본 Filter제외(Controller, Service, Repository 등등)하고 Controller 어노테이션만 스캔함.
 
@@ -56,8 +59,12 @@ public class WebConfig implements WebMvcConfigurer {
 		
 	}
 
+	@Autowired
+	SessionIntercepter session;
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(session)
+		.addPathPatterns("/**.do");
 	}
 
 	@Override

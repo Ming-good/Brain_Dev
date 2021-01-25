@@ -19,7 +19,10 @@
 					<a href="/brain/brainDev/signUp">회원가입</a>
 				</div>			
 				<div class="btn_join">
-					<a href="javascript:Login_pop();">로그인</a>
+					<c:choose>
+						<c:when test="${user.userNM eq '이민규'}"><span>${user.userNM}</span></c:when>
+						<c:otherwise><a href="javascript:Login_pop();">로그인</a></c:otherwise>
+					</c:choose>
 				</div>
 			</div>
 		</div>
