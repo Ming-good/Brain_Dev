@@ -1,22 +1,14 @@
 import java.io.IOException;
-import java.util.Scanner;
+import java.security.NoSuchAlgorithmException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
-	public static void main(String[] args) throws NumberFormatException, IOException {
-		Scanner s = new Scanner(System.in);
-        
-        int A = s.nextInt();
-        int B = s.nextInt();
-        int C = s.nextInt();
-        
-        int i = 0;
-        int sum = 0;
-        
-        while(sum < C) {
-        	++i;
-        	sum = A*i - B*i + A;
-        }
-        
-        System.out.println(i+1);
+	public static void main(String[] args) throws NumberFormatException, IOException, NoSuchAlgorithmException {
+		String userid = "1234567891";
+		Pattern p = Pattern.compile("^([\\w]){4,10}$"); 
+		Matcher login_check = p.matcher(userid);
+		
+		System.out.println(login_check.matches());
 	}
 }

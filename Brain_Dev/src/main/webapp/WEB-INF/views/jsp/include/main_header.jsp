@@ -16,11 +16,11 @@
 		<div class="light_gray">
 			<div class="w_size">
 				<div class="btn_join">
-					<a href="/brain/brainDev/signUp">회원가입</a>
+					<a href="/brain/user/signUp">회원가입</a>
 				</div>			
 				<div class="btn_join">
 					<c:choose>
-						<c:when test="${user.userNM eq '이민규'}"><span>${user.userNM}</span></c:when>
+						<c:when test="${loginUser.userNM eq '이민규'}"><span>${loginUser.userNM}</span></c:when>
 						<c:otherwise><a href="javascript:Login_pop();">로그인</a></c:otherwise>
 					</c:choose>
 				</div>

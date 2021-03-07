@@ -20,10 +20,8 @@ public class SessionIntercepter implements HandlerInterceptor {
 		HttpSession session = request.getSession();
 		UserVO userSession = (UserVO) session.getAttribute("loginUser");
 		
-		System.out.println("\n\n\n\n\n\n\n¼¼¼Ç\n\n\n\n\n\n\n\n\n\n\n");
-		
 		if(ObjectUtils.isEmpty(userSession)){
-			response.sendRedirect("/brainDev/home");
+			response.sendRedirect("/brain/brainDev/home");
 			return false;
 		} else {
 			return true;
