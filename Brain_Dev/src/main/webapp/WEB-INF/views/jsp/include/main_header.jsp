@@ -6,10 +6,20 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="${pageContext.request.contextPath}/design/js/jquery-3.5.1.min.js"></script>
-<script src="${pageContext.request.contextPath}/design/js/header.js"></script>
-  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/design/css/header.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="${pageContext.request.contextPath}/design/js/jquery-3.5.1.min.js"></script>
+	<script src="${pageContext.request.contextPath}/design/js/header.js"></script>
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+ 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/design/css/header.css">
+ 	<script type="text/javascript">
+
+	    function kakaoLogin() {
+    		var left = parseInt($(window).width() / 2); // - 495;
+    		var redirectURL = encodeURIComponent("http://172.105.197.109:8080/brain/user/api/kakaoLogin");
+			var urlStr = "https://kauth.kakao.com/oauth/authorize?client_id=8a85cbafed2e7eb85771aa221de58951&redirect_uri="+redirectURL+"&response_type=code";
+			window.open(urlStr,"KakaoLoginWin", "toolbar=no,top=50,left=" + left + ",width=490,height=536,resize=no,status=no,scrollbars=yes");
+	    }
+ 	</script>
 </head>
 <body>
 	<header class="head">
@@ -41,6 +51,7 @@
 							<input id="password" name="password" type="password" class="input_login">
 						</div>	
 						<a href="#" class="btn_login">로그인</a>		
+						<a href="javascript:kakaoLogin();"><img style="margin-left:20px;" alt="kakao" src="${pageContext.request.contextPath}/design/img/kakao_login_medium_wide.png"></a>
 					</div>
 					<div>
 						<a href="javascript://" class="main_login_pop_close">로그인 팝업 닫기</a>

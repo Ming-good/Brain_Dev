@@ -56,7 +56,7 @@
 		<h1>
 			<div class="head1">
 				<div class="logo">
-					<a href="#">
+					<a href="/brain/brainDevMain/home">
 						<img style="width:500px; height:auto;" src="${pageContext.request.contextPath}/design/img/Brain Dev-logo_SignUp.png"/>
 					</a>
 				</div>
