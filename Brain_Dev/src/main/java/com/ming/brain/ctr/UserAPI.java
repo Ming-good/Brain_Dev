@@ -18,10 +18,8 @@ public class UserAPI {
 	
 	@GetMapping("/kakaoLogin")
 	public String getKakaoInfo(Model model, HttpSession session,
-							   @RequestParam("code") String code) {
-		
-		logger.debug(code);
-		
-		return "redirect:/signUp";
+								@RequestParam("code") String code) {
+		model.addAttribute("ciCode", code);
+		return "/user/kakaoLoginForm";
 	}
 }

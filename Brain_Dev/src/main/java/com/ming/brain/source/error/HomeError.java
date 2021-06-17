@@ -16,7 +16,7 @@ public class HomeError  {
 	public String commonException(Model model, Exception e) {
 		e.printStackTrace();
 		logger.debug("Error : ", e);
-		model.addAttribute("ERROR", e.getMessage());
+		model.addAttribute("ERROR", e);
 		return "/error/homeError";
 	}
 }

@@ -22,6 +22,9 @@
  	</script>
 </head>
 <body>
+	<form name="userForm">
+		<input type="hidden" value="" name="ci_code" />
+	</form>
 	<header class="head">
 		<div class="light_gray">
 			<div class="w_size">
