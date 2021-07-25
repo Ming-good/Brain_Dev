@@ -4,13 +4,16 @@ import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import net.sf.log4jdbc.Log4jdbcProxyDataSource;
 import net.sf.log4jdbc.tools.Log4JdbcCustomFormatter;
 import net.sf.log4jdbc.tools.LoggingType;
 
 @Configuration
+@EnableTransactionManagement
 public class DatabaseConfig {
 	
 	@Bean
@@ -27,6 +30,12 @@ public class DatabaseConfig {
 		spyLogDelegator.setSqlPrefix("[SQL]");
 		log4.setLogFormatter(spyLogDelegator);
 		
+		
 		return log4;
 	}
+	
+	@Bean
+	public DataSourceTransactionManager transactionManager(DataSource dataSource) {
+		return new DataSourceTransactionManager(dataSource);
+	}	
 }

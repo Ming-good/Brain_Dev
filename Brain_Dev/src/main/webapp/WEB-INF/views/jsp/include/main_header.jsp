@@ -12,12 +12,12 @@
 	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
  	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/design/css/header.css">
  	<script type="text/javascript">
-
 	    function kakaoLogin() {
     		var left = parseInt($(window).width() / 2); // - 495;
     		var redirectURL = encodeURIComponent("http://172.105.197.109:8080/brain/user/api/kakaoLogin");
 			var urlStr = "https://kauth.kakao.com/oauth/authorize?client_id=8a85cbafed2e7eb85771aa221de58951&redirect_uri="+redirectURL+"&response_type=code";
 			window.open(urlStr,"KakaoLoginWin", "toolbar=no,top=50,left=" + left + ",width=490,height=536,resize=no,status=no,scrollbars=yes");
+			
 	    }
  	</script>
 </head>

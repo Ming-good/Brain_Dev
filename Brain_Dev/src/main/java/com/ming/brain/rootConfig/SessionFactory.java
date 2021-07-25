@@ -10,9 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @MapperScan(basePackages =  "com.ming.brain.mapperInterface")
+@EnableTransactionManagement
 public class SessionFactory {
 	@Autowired
 	ApplicationContext applicationContext;

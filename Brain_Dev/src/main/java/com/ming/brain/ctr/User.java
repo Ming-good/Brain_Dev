@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.ming.brain.dao.UserDAO;
 import com.ming.brain.mapperInterface.UserMapper;
 import com.ming.brain.source.util.Util;
 
@@ -22,9 +24,6 @@ import com.ming.brain.source.util.Util;
 @RequestMapping(value="/user")
 public class User {
 
-	@Autowired
-	UserMapper userMapper;
-	
 	@GetMapping("/signUp")
 	public String formSignUp(Model model, HttpSession session) throws Exception {
 		
@@ -34,6 +33,9 @@ public class User {
 		
 		return "/user/SignUp";		
 	}
+	
+	@Autowired
+	UserDAO userDAO;
 	
 	@PostMapping("/signUp/insert")
 	public String insertSignUp(@RequestParam("loginID") String loginID,
@@ -62,9 +64,9 @@ public class User {
 		map.put("CI_CODE", "asdasd");
 		map.put("NAME", name);
 		
-		userMapper.insertMember(map);
+		userDAO.insertUserData(map);
 		
-		return "/user/home";		
+		return "redirect:/brainDevMain/home";		
 	}	
 
 	@PostMapping("/signUp/update")
@@ -95,7 +97,7 @@ public class User {
 		
 		HashMap map = new HashMap();
 		map.put("LOGIN_ID", loginID.toLowerCase().trim());		
-		HashMap user = userMapper.selectLoginID(map);
+		HashMap user = userDAO.selectUserData(map);
 		return user;
 	}
 	
