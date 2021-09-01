@@ -27,6 +27,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.ming.brain.rootConfig.SessionIntercepter;
 
+import lombok.experimental.UtilityClass;
+
 //기본 Filter제외(Controller, Service, Repository 등등)하고 Controller 어노테이션만 스캔함.
 
 @Configuration

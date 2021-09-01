@@ -76,6 +76,7 @@
 						<tr>
 							<th>아이디<span class="point">*</span></th>
 							<td>
+								<p>${ci_code}</p>
 								<input type="text" name="loginID" class="inputTypeA" maxlength="12" placeholder="아이디"/>
 								<a href="javascript:userCheck();" class="btnM colorD">중복확인</a>
 								<span class="subTxt">(4~12 영문, 숫자)</span>

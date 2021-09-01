@@ -9,7 +9,7 @@
 		INSERT INTO USER_INFO
 		    (USER_ID, LOGIN_ID, PASSWORD, CI, NAME)
 		VALUES
-		    (SEQ_USER_ROW.NEXTVAL, #{LOGIN_ID}, #{PASSWORD}, #{CI_CODE}, #{NAME})	
+		    (SEQ_USER_ROW.NEXTVAL, '',  '', #{CUST_ID}, '')	
 		]]>
 	</insert>	
 
@@ -23,4 +23,15 @@
 		FROM DUAL
 		]]>
 	</select>	
+
+	<select id="selectCiCheck" parameterType="java.util.HashMap" resultType="HashMap">
+		<![CDATA[
+		SELECT CASE WHEN EXISTS (
+		            SELECT 1
+		            FROM USER_INFO
+		            WHERE CI = #{KAKAO_CUST_ID}
+		            ) THEN 'Y' ELSE 'N' END USER_YN
+		FROM DUAL
+		]]>
+	</select>		
 </mapper>

@@ -1,14 +1,16 @@
 package com.ming.brain.ctr;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.http.client.ClientProtocolException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,20 +18,50 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.ming.brain.dao.UserDAO;
-import com.ming.brain.mapperInterface.UserMapper;
+import com.ming.brain.source.api.KakaoAPI;
 import com.ming.brain.source.util.Util;
 
 @Controller
 @RequestMapping(value="/user")
 public class User {
 
+	@Autowired
+	KakaoAPI kakaoAPI;
+	
 	@GetMapping("/signUp")
-	public String formSignUp(Model model, HttpSession session) throws Exception {
+	public String formSignUp(Model model, HttpSession session,
+							@RequestParam("ci_code") String code) throws Exception {
+		JsonNode node;
+		HashMap map = null;
+		String path = "";
 		
-		if(Util.isSession(session)) {
-			return "redirect:/brainDev/home";
-		}
+		try {
+
+			if(Util.isSession(session)) {
+				return "redirect:/brainDev/home";
+			}				
+			
+			node = kakaoAPI.getAccessToken(code, false);
+			node = kakaoAPI.getCutomerID(node.get("access_token").toString());
+			
+			if(node.get("id") == null || "".equals(node.get("id").toString())) {
+				throw new Exception("고객 정보가 변조되었습니다.");
+			}
+			
+			model.addAttribute("ci_code", node.get("id").toString());
+			
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClientProtocolException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
 		
 		return "/user/SignUp";		
 	}

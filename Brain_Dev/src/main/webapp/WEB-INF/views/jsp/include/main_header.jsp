@@ -2,7 +2,9 @@
 <%@page import="java.util.*"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ page session="false" %>
+<spring:eval expression="@cofigProperties['main.path']" var="mainPath"/>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -14,10 +16,9 @@
  	<script type="text/javascript">
 	    function kakaoLogin() {
     		var left = parseInt($(window).width() / 2); // - 495;
-    		var redirectURL = encodeURIComponent("http://172.105.197.109:8080/brain/user/api/kakaoLogin");
+    		var redirectURL = encodeURIComponent("${mainPath}/user/api/kakaoLogin");
 			var urlStr = "https://kauth.kakao.com/oauth/authorize?client_id=8a85cbafed2e7eb85771aa221de58951&redirect_uri="+redirectURL+"&response_type=code";
 			window.open(urlStr,"KakaoLoginWin", "toolbar=no,top=50,left=" + left + ",width=490,height=536,resize=no,status=no,scrollbars=yes");
-			
 	    }
  	</script>
 </head>
